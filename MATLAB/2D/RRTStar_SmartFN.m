@@ -27,7 +27,6 @@ directcost_old = 0;
 directcost_new = 0;
 
 for i = 1:1:numIterate
-%     i = i+1;
     disp(i);
     %Spawn random point
     if InitialPathFound && mod(i-init_n,b) == 0 %Spawn random point near beacon
