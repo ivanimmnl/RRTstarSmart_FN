@@ -1,5 +1,5 @@
 function [route, init_n, init_cost, final_cost] = RRTStar_SmartFN_3D (numIterate, maxNodes, x_max, y_max, z_max, obstacle, q_start, q_goal, b)
-%close all
+close all
 
 EPS = 20;
 rewire_r = 100;
@@ -26,31 +26,6 @@ q_beacons_new = {};
 directcost_old = 0;
 directcost_new = 0;
 
-% figure(1)
-% axis([0 numIterate 980 1300])
-% xlabel('Number of iterations (after initial path is found)');
-% ylabel('Path cost');
-% hold on
-%
-% switch b
-%     case 5
-%         colorz = [0 0 1]; %blue
-%     case 45
-%         colorz = [1 0 1]; %magenta
-%     case 85
-%         colorz = [0 1 0]; %green
-%     case 125
-%         colorz = [0 1 1]; %cyan
-%     case 165
-%         colorz = [1 1 0]; %yellow
-%     case 205
-%         colorz = [1 0 0]; %red
-%     otherwise
-%         colorz = [0 0 0]; %black
-% end
-%
-% i = 0;
-% while i <= numIterate
 for i = 1:1:numIterate
     %     i = i+1;
     disp(i);
@@ -203,9 +178,7 @@ for i = 1:1:numIterate
                 for j = 1:1:length(q_beacons_new)-1
                     directcost_new = directcost_new + dist(q_beacons_new{j}, q_beacons_new{j+1});
                 end
-                
-                %                 tempest = directcost_old;
-                
+                                
                 if directcost_new < directcost_old
                     q_beacons_old = q_beacons_new;
                     directcost_old = directcost_new;
@@ -258,11 +231,7 @@ for i = 1:1:numIterate
                 
                 %Update the parent position of nodes with last node as parent
                 nodes_parent(nodes_parent == length(nodes)) = chosenidx;
-                
-%                 if n_goal > maxNodes %means maxNodes exceeded and q_new is q_goal
-%                     n_goal = chosenidx;
-%                 end
-                
+                               
                 %Delete last element
                 nodes(end) = [];
                 nodes_cost(end) = [];
@@ -301,14 +270,6 @@ for i = 1:1:numIterate
             
         end
     end
-    
-    %     if InitialPathFound
-    %         if i == 1
-    %             line([i i], [init_cost directcost_old], 'Color', [1 0 0] , 'LineWidth', 2);
-    %         else
-    %             line([i-1 i], [tempest directcost_old], 'Color', [1 0 0], 'LineWidth', 2);
-    %         end
-    %     end
 end
 
 
