@@ -27,7 +27,6 @@ directcost_old = 0;
 directcost_new = 0;
 
 for i = 1:1:numIterate
-    %     i = i+1;
     disp(i);
     disp(InitialPathFound);
     %Spawn random point
@@ -95,7 +94,6 @@ for i = 1:1:numIterate
             
             %Check if goal is reached
             if ~InitialPathFound && dist(q_new, q_goal) <= 5*EPS && noCollision(q_new, q_goal, obstacle) 
-                disp("IM IN HERE");
                 if length(nodes) > maxNodes %forced removal
                     for jj = 1:2 %delete twice for q_new and q_goal
                         childlessNodes_idx = [];
@@ -142,7 +140,6 @@ for i = 1:1:numIterate
                     n_goal = length(nodes);
                 end
                 init_n = i;
-                %                 i = 1; %to reset
                 init_cost = q_new_cost + dist(q_new, q_goal);
                 directcost_old = init_cost;
                 InitialPathFound = true;
