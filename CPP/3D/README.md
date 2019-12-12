@@ -1,3 +1,6 @@
+Use .obj model and convert to binvox
+Convert binvox to 2d matrix and store in .txt file for planning
+
 1. Build Package
 2. rosrun drone_waypoint_3d Main
 3. Use the generated waypoints_3D.yaml in the waypoint_navigator package by RotorS
