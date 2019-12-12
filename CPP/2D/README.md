@@ -7,4 +7,5 @@ waypoint_navigator: https://github.com/ethz-asl/waypoint_navigator
 Make sure to change the yaml file in the waypoint_navigator.launch to waypoints.yaml
 
 **If turtlebot is being used, uncomment the control part in Main.cpp
+
 **Turtlebot simulation: refer to https://github.com/Mayavan/RRT-star-path-planning-with-turtlebot
