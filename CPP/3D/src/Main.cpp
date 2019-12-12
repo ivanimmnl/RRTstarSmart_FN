@@ -72,38 +72,7 @@ int main(int argc, char **argv)
   while(yawfile.get(ch)) outfile << ch;
 
   xfile.close(); yfile.close(); zfile.close(); yawfile.close(); outfile.close();
-
-//  int counter = 0;
-
-//  ROS_INFO_STREAM("Plotting MAP with Global Plan");
-//  // Plot the map
-//  for(int i=0;i<384;i++)
-//    for(int j=0;j<608;j++)
-//      if(manager.get_state(i,j)>150)
-//      {
-//        vector<double> x,y;
-//        x.push_back((i*0.05) - 10);
-//        x.push_back((i*0.05) - 10+0.01);
-//        y.push_back((j*0.05) - 10);
-//        y.push_back((j*0.05) - 10+0.01);
-//        plt::plot(x, y);
-//        if (DEBUG) cout<<"Printing"<<counter++<<endl;
-//      }
-  
-
-//  // Plot the plan
-//  vector<double> x,y;
-//  for(int i=plan.size()-1; i >= 0; i--)
-//  {
-//    x.push_back(plan[i].pose.position.x);// -2.0);
-//    y.push_back(plan[i].pose.position.y);// - 0.5);
-//  }
-//  plt::plot(x, y);
-//  plt::xlim(-10, 10);
-//  plt::ylim(-10, 20);
-//  plt::show();
-  
-  //control.executePlan(plan, final_yaw);
+  //PROCEED TO WAYPOINT_NAVIGATOR TO USE THE GENERATED YAML FILE
 
   return 0;
 }
