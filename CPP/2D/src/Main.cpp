@@ -101,6 +101,7 @@ int main(int argc, char **argv)
   plt::ylim(-10, 20);
   plt::show();
   
+  //UNCOMMENT THIS IF TURTLEBOT IS BEING USED
   //control.executePlan(plan, final_yaw);
 
   return 0;
