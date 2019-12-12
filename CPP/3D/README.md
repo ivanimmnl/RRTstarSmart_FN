@@ -1,4 +1,4 @@
-Use .obj model and convert to binvox
+Use .obj model and convert to binvox.
 Convert binvox to 2d matrix and store in .txt file for planning
 
 1. Build Package
